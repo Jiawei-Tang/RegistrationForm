@@ -1,5 +1,5 @@
 import type { RegistrationFormData } from '../models/RegistrationFormData.ts';
-import { Stack } from '@fluentui/react';
+import { Stack, Persona, PersonaSize } from '@fluentui/react';
 
 interface ConfirmationStepProps {
     formData: RegistrationFormData;
@@ -10,6 +10,12 @@ export const ConfirmationStep = ({ formData }: ConfirmationStepProps) => {
         <>
             <h3>Confirm Your Info</h3>
             <Stack tokens={{ childrenGap: 10 }}>
+                <Persona
+                    showUnknownPersonaCoin={!formData.avatar}
+                    imageUrl={formData.avatar ? URL.createObjectURL(formData.avatar) : undefined}
+                    secondaryText={formData.avatar ? formData.avatar.name : "You haven't uploaded your avatar yet"}
+                    size={PersonaSize.size100}
+                />
                 <div><strong>Name:</strong> {formData.firstName} {formData.lastName}</div>
                 <div><strong>Date of Birth:</strong> {formData.dateOfBirth.toLocaleDateString()}</div>
                 <div><strong>Country:</strong> {formData.country}</div>

@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { Stack, TextField, Label, Dropdown, mergeStyleSets } from '@fluentui/react';
 import type { IDropdownOption } from '@fluentui/react';
 import { verifyName, verifyGender } from '../utils/Utils';
+import { AvatarUploader } from './AvatarUploader';
 
 export interface AccountProps {
     country: string;
     gender: string;
     avatar: string;
-    onChange: (field: string, value: string | Date) => void;
+    onChange: (field: string, value: string | Date | File) => void;
 }
 
 const genderOptions: IDropdownOption[] = [
@@ -70,7 +71,8 @@ export const DetailsStep = (props: AccountProps) => {
                 errorMessage={genderErrorMsg}
                 required
             />
-            {/* TODO:// Add Avatar */}
+            {/* Upload Avatar from local disk */}
+            <AvatarUploader onImageChange={props.onChange} />            
 
         </Stack>
     )

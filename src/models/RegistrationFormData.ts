@@ -6,4 +6,5 @@ export interface RegistrationFormData {
     gender: string;
     email: string;
     password: string,
+    avatar?: File;
 }

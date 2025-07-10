@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PrimaryButton, mergeStyleSets } from '@fluentui/react'
+import { PrimaryButton, Separator, mergeStyleSets } from '@fluentui/react'
 import { RegistrationPanel } from './components/RegistrationPanel.tsx';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';
 
@@ -26,6 +26,7 @@ function App() {
         <PrimaryButton text="Register New Users" onClick={() => { setIsPanelOpen(true) }} />
       </div>
       <RegistrationPanel isPanelOpen={isPanelOpen} onDismiss={() => { setIsPanelOpen(false) }} />
+      <Separator />
     </>
   )
 }

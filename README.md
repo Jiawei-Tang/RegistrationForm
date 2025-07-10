@@ -8,7 +8,7 @@ It is built on React 18 and uses Fluent UI for basic components.
 
 The project is organized into the following components:
 
-- **App.tsx**: The entry piont and index page.
+- **App.tsx**: The index page.
 - **RegistrationPanel.tsx**: The RegistrationPanel. Which contains all the steps. The steps are put in seperate files to increase maintainability.
 
 ## Getting Started
