@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Panel, PrimaryButton, DefaultButton, mergeStyleSets, PanelType, Dialog, DialogFooter, Icon, DialogType, Spinner, on } from '@fluentui/react';
+import { Panel, PrimaryButton, DefaultButton, mergeStyleSets, PanelType, Dialog, Icon, DialogType, Spinner } from '@fluentui/react';
 import type { RegistrationFormData } from '../models/RegistrationFormData.ts';
 import { RegistrationSteps } from '../models/RegistrationSteps.ts';
 import { BasicInfoStep } from './BasicInfoStep';
@@ -7,7 +7,7 @@ import { DetailsStep } from './DetailsStep';
 import { AccountStep } from './AccountStep';
 import { ConfirmationStep } from './ConfirmationStep';
 import { verifyFormData } from '../utils/Utils.ts';
-import { MockUserDataProvider } from '../providers/mockUserProvider.ts';
+import { MockUserDataProvider } from '../providers/MockUserDataProvider.ts';
 
 const styles = mergeStyleSets({
     container: {
