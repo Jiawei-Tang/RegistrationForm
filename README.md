@@ -1,6 +1,6 @@
-# Registration Form
+# Mutil-step Registration Form
 
-# React + TypeScript + Vite
+# View at: https://happy-bay-0eb2e9b1e.1.azurestaticapps.net/
 This project is a multi-step registration form built with React and TypeScript.
 It is built on React 18 and uses Fluent UI for basic components.
 
