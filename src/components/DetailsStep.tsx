@@ -32,7 +32,7 @@ export const DetailsStep = (props: AccountProps) => {
     const onChangeCountry = (_: any, newValue?: string) => {
         const newName = newValue?.trim() || '';
         if (!verifyName(newName)) {
-            setCountryErrorMsg('Invalid email format');
+            setCountryErrorMsg('Country name must be between 2 and 80 characters.');
         }
         else {
             setCountryErrorMsg('');

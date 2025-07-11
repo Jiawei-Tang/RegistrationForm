@@ -14,6 +14,8 @@ Input verification is extracted into the utils.ts file, in order to maintain the
 
 This project also contains tests. They are put under /src/tests directory.
 
+###
+The images in the sampleAvatars folder are only for manual upload testing.
 
 ## Getting Started
 
@@ -29,3 +31,21 @@ To run the tests:
    ```
    npm run test
    ```
+
+## Accessbility
+Tested with AI4W. Passed automated checks and keyboard navigation.
+![A11y test of the home page](readmeImg\a11y1.jpg)
+![A11y test of the panel](readmeImg\a11y2.png)
+
+## Demo
+### Input and Verification
+![Name and date of birth Verification](readmeImg\step1.jpg)
+![Country and gender Verification](readmeImg\step2.jpg)
+![Email and Password Verification](readmeImg\step3-1.jpg)
+![Password too weak Verification](readmeImg\step3-2.jpg)
+
+### Confirmation
+
+![Confirmation Step](readmeImg\step4.jpg)
+![Submitting](readmeImg\submitting.jpg)
+![Show message and console log on success](readmeImg\onSuccess.jpg)
