@@ -8,9 +8,11 @@ const styles = mergeStyleSets({
     display: 'flex',
     flexDirection: 'column',
     gap: '20px',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: '10vh',
     alignItems: 'center',
     width: '100vw',
+    height: '100vh',
   }
 });
 
@@ -23,7 +25,7 @@ function App() {
     <>
       <div className={styles.root}>
         <h1>Register Form</h1>
-        <PrimaryButton text="Register New Users" onClick={() => { setIsPanelOpen(true) }} />
+        <PrimaryButton id='openPanelButton' text="Register New Users" onClick={() => { setIsPanelOpen(true) }} />
       </div>
       <RegistrationPanel isPanelOpen={isPanelOpen} onDismiss={() => { setIsPanelOpen(false) }} />
       <Separator />

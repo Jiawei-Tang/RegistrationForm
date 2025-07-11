@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Stack, TextField, Label, mergeStyleSets } from '@fluentui/react';
-import { verifyEmail, verifyPassword } from '../utils/Utils';
+import { verifyEmail, verifyPasswordLength, verifyPasswordStrength } from '../utils/Utils';
 
 export interface AccountProps {
     email: string;
@@ -29,8 +29,11 @@ export const AccountStep = (props: AccountProps) => {
     }
 
     const onChangePassword = (_: any, newValue?: string) => {
-        if (!verifyPassword(newValue || '')) {
+        if (!verifyPasswordLength(newValue || '')) {
             setPasswordErrorMsg('Password must be between 8 to 30 characters long');
+        }
+        else if(!verifyPasswordStrength(newValue!)) {
+            setPasswordErrorMsg('Password must contain at least one number, one uppercase letter, one lowercase letter, and one special character');
         }
         else {
             setPasswordErrorMsg('');
@@ -52,7 +55,7 @@ export const AccountStep = (props: AccountProps) => {
             <TextField
                 className={styles.textInput}
                 label="Password"
-                description='Password must be at least 8 characters long'
+                description='Password must be at least 8 characters long, and contain at least one number, one uppercase letter, one lowercase letter, and one special character.'
                 type="password"
                 canRevealPassword
                 revealPasswordAriaLabel="Show password"

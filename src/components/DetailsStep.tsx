@@ -30,13 +30,14 @@ export const DetailsStep = (props: AccountProps) => {
     const [genderErrorMsg, setGenderErrorMsg] = useState('');
 
     const onChangeCountry = (_: any, newValue?: string) => {
-        if (!verifyName(newValue || '')) {
+        const newName = newValue?.trim() || '';
+        if (!verifyName(newName)) {
             setCountryErrorMsg('Invalid email format');
         }
         else {
             setCountryErrorMsg('');
         }
-        props.onChange('country', newValue || '');
+        props.onChange('country', newName);
     }
 
     const onChangeGender = (_: any, option?:  IDropdownOption) => {

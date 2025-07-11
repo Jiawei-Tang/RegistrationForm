@@ -25,21 +25,23 @@ export const BasicInfoStep = (props: BasicInfoProps) => {
     const maxDate = new Date();
 
     const onChangeFirstName = (_: any, newValue?: string) => {
-        if (!verifyName(newValue || '')) {
+        const newName = newValue?.trim() || '';
+        if (!verifyName(newName)) {
             setFirstNameErrorMsg('First name  must be between 2 and 80 characters.');
         } else {
             setFirstNameErrorMsg('');
         }
-        props.onChange('firstName', newValue || '');
+        props.onChange('firstName', newName);
     }
 
     const onChangeLastName = (_: any, newValue?: string) => {
-        if (!verifyName(newValue || '')) {
+        const newName = newValue?.trim() || '';
+        if (!verifyName(newName)) {
             setLastNameErrorMsg('Last name must be between 2 and 80 characters.');
         } else {
             setLastNameErrorMsg('');
         }
-        props.onChange('lastName', newValue || '');
+        props.onChange('lastName', newName);
     }
 
     const onSelectDate = (date: Date | null | undefined) => {

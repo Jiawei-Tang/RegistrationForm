@@ -34,7 +34,7 @@ describe("UtilsTests", () => {
     });
 
     it("Test when password is legal. Should return true", () => {
-        expect(verifyPassword("12345678")).toEqual(true);
+        expect(verifyPassword("12345678a@A")).toEqual(true);
         
         let longPwd = "a".repeat(30);
         expect(verifyName(longPwd)).toEqual(true);
@@ -45,9 +45,14 @@ describe("UtilsTests", () => {
         expect(verifyPassword("")).toEqual(false);
         // case too short
         expect(verifyPassword("Test")).toEqual(false);
-        // case no number
+        // case too long
         let longPwd = "a".repeat(31);
         expect(verifyPassword(longPwd)).toEqual(false);
+        // case weak password
+        expect(verifyPassword("12345678")).toEqual(false);
+        expect(verifyPassword("Test1234")).toEqual(false);
+        expect(verifyPassword("testtesttest")).toEqual(false);
+        expect(verifyPassword("@@###ttest")).toEqual(false);
     });
 
     it("Test when Gender is legal. Should return true", () => {
